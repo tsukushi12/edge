@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bbs.each do |bb| %>
+      <tr>
+        <td><%= bb.name %></td>
+        <td><%= bb.body %></td>
+        <td><%= link_to 'Show', bb %></td>
+        <td><%= link_to 'Edit', edit_bb_path(bb) %></td>
+        <td><%= link_to 'Destroy', bb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bb', new_bb_path %>
