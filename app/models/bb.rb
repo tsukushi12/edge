@@ -1,6 +1,6 @@
 class Bb < ApplicationRecord
   validates :name,
-    presence: true,
+    presence: true
   validates :body,
-    presence: true,
+    presence: true
 end
