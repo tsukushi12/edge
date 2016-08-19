@@ -1,27 +1,41 @@
-<%= form_for(bb) do |f| %>
-  <% if bb.errors.any? %>
-    <div class="panel panel-danger">
-      <div class="panel-heading"><%= bb.errors.count %>個のエラーがあります</div>
+<button type="button" class="btn btn-default btn-post" data-toggle="modal" data-target="#post">
+  投稿する <span class="glyphicon glyphicon-pencil"></span>
+</button>
 
-      <ul class="list-group">
-      <% bb.errors.full_messages.each do |message| %>
-        <li class="list-group-item"><%= message %></li>
-      <% end %>
-      </ul>
+<div class="modal fade" id="post">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">投稿</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(bb) do |f| %>
+          <% if bb.errors.any? %>
+            <div class="panel panel-danger">
+              <div class="panel-heading"><%= bb.errors.count %>個のエラーがあります</div>
+
+              <ul class="list-group">
+                <% bb.errors.full_messages.each do |message| %>
+                  <li class="list-group-item"><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.text_field :name, maxlength: 14, class: "form-control", placeholder: :name %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_area :body, maxlength: 200, class: "form-control form-body", placeholder: :body, rows: "7" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "投稿", class: "btn btn-default btn-block" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :name, class: "control-label" %>
-    <%= f.text_field :name, maxlength: 14, class: "form-control" %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :body, class: "control-label" %>
-    <%= f.text_area :body, maxlength: 200, class: "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "投稿", class: "btn btn-primary btn-block" %>
-  </div>
-<% end %>
+</div>
