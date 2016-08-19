@@ -1,6 +1,8 @@
 class Bb < ApplicationRecord
   validates :name,
-    presence: true
+    presence: true,
+    length: { maximum: 14 }
   validates :body,
-    presence: true
+    presence: true,
+    length: { maximum: 200 }
 end

@@ -11,12 +11,14 @@
   <body>
     <div class="jumbotron text-center">
       <h1>掲示板</h1>
-      <p>シンプルで可用性のある掲示板システムです</p>
+      <p>シンプルな掲示板システムです</p>
+      <%= link_to new_bb_path, class: "btn btn-default" do %>
+        投稿する <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
     </div>
     <div class="container">
       <% if flash[:notice].present? %>
-        <div class="alert alert-info alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="alert alert-info" id="alert-fadeout" role="alert">
           <%= notice %>
         </div>
       <% end %>

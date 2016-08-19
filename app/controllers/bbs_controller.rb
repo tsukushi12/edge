@@ -28,7 +28,7 @@ class BbsController < ApplicationController
 
     respond_to do |format|
       if @bb.save
-        format.html { redirect_to @bb, notice: 'Bb was successfully created.' }
+        format.html { redirect_to bbs_path, notice: '投稿が完了しました' }
         format.json { render :show, status: :created, location: @bb }
       else
         format.html { render :new }
