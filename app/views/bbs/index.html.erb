@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Bbs</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,9 +12,6 @@
       <tr>
         <td><%= bb.name %></td>
         <td><%= bb.body %></td>
-        <td><%= link_to 'Show', bb %></td>
-        <td><%= link_to 'Edit', edit_bb_path(bb) %></td>
-        <td><%= link_to 'Destroy', bb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +19,4 @@
 
 <br>
 
-<%= link_to 'New Bb', new_bb_path %>
+<%= link_to '投稿する', new_bb_path %>
