@@ -5,6 +5,7 @@ class BbsController < ApplicationController
   # GET /bbs.json
   def index
     @bbs = Bb.all
+    @bb = Bb.new
   end
 
   # GET /bbs/1

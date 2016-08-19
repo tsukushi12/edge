@@ -15,6 +15,21 @@
       <%= link_to new_bb_path, class: "btn btn-default" do %>
         投稿する <span class="glyphicon glyphicon-pencil"></span>
       <% end %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">クリックするとモーダルウィンドウが開きます。</button>
+
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">投稿</h4>
+            </div>
+            <div class="modal-body">
+              <%= render 'form', bb: @bb %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container">
       <% if flash[:notice].present? %>
