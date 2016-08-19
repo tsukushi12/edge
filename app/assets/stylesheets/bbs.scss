@@ -1,3 +1,26 @@
 // Place all the styles related to the bbs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-post {
+  width: 300px;
+}
+.jumbotron {
+  background:url(chalkboard.jpg) center no-repeat;
+  background-size: cover;
+  h1 {
+    color: rgb(208, 208, 208);
+  }
+  p {
+    color: rgb(176, 176, 176);
+  }
+}
+
+#wrap {
+  width:100%;
+  overflow:hidden;
+}
+
+.form-body {
+  height: 20em;
+}
