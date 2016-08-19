@@ -1,7 +1,7 @@
 <%= form_for(bb) do |f| %>
   <% if bb.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(bb.errors.count, "error") %> prohibited this bb from being saved:</h2>
+      <h2><%= bb.errors.count %>個のエラーがあります</h2>
 
       <ul>
       <% bb.errors.full_messages.each do |message| %>
