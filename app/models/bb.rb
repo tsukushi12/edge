@@ -5,4 +5,6 @@ class Bb < ApplicationRecord
   validates :body,
     presence: true,
     length: { maximum: 200 }
+  validates :hostname,
+    presence: true
 end

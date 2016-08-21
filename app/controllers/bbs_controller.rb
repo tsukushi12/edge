@@ -27,6 +27,8 @@ class BbsController < ApplicationController
   def create
     @bb = Bb.new(bb_params)
 
+    @bb.hostname = ENV["HOSTNAME"]
+
     respond_to do |format|
       if @bb.save
         format.html { redirect_to root_path, notice: '投稿が完了しました' }

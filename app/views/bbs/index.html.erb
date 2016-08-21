@@ -1,18 +1,17 @@
-<table class="table table-striped">
-  <% @bbs.order('created_at DESC').each do |bb| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-6">
-            <span class="glyphicon glyphicon-menu-right"></span> <%= bb.name %>
-          </div>
-          <div class="col-xs-6 text-right">
-            <span class="glyphicon glyphicon-time"></span> <%= I18n.l bb.created_at, format: :default %>
-          </div>
+<% @bbs.order('created_at DESC').each do |bb| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-xs-6">
+          <span class="glyphicon glyphicon-menu-right"></span> <%= bb.name %>
+        </div>
+        <div class="col-xs-6 text-right">
+          <span class="glyphicon glyphicon-time"></span> <%= I18n.l bb.created_at, format: :default %>
         </div>
       </div>
-      <div class="panel-body">
-        <%= bb.body %>
-      </div>
     </div>
-  <% end %>
+    <div class="panel-body">
+      <%= bb.body %>
+    </div>
+  </div>
+<% end %>
