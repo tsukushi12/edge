@@ -27,7 +27,7 @@ class BbsController < ApplicationController
   def create
     @bb = Bb.new(bb_params)
 
-    @bb.hostname = ENV["HOSTNAME"]
+    @bb.hostname = request.host
 
     respond_to do |format|
       if @bb.save
