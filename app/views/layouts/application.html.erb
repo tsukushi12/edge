@@ -14,10 +14,14 @@
         <div class="container">
           <h1>掲示板</h1>
           <p>シンプルな掲示板システムです</p>
+          <%= link_to new_bb_path, class: 'btn btn-default btn-post' do %>
+            投稿する <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+
+          <% if false %>
           <button type="button" class="btn btn-default btn-post" data-toggle="modal" data-target="#post">
             投稿する <span class="glyphicon glyphicon-pencil"></span>
           </button>
-
           <div class="modal fade" id="post">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -31,6 +35,8 @@
               </div>
             </div>
           </div>
+          <% end %>
+
         </div>
       </div>
       <div class="container">
