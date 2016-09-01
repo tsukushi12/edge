@@ -12,13 +12,14 @@
     <div id="wrap">
       <div class="jumbotron text-center">
         <div class="container">
-          <h1>掲示板</h1>
+          <h1><%= link_to '掲示板', root_path %></h1>
           <p>シンプルな掲示板システムです</p>
-          <%= link_to new_bb_path, class: 'btn btn-default btn-post' do %>
-            投稿する <span class="glyphicon glyphicon-pencil"></span>
+          <% if false %>
+            <%= link_to new_bb_path, class: 'btn btn-default btn-post' do %>
+              投稿する <span class="glyphicon glyphicon-pencil"></span>
+            <% end %>
           <% end %>
 
-          <% if false %>
           <button type="button" class="btn btn-default btn-post" data-toggle="modal" data-target="#post">
             投稿する <span class="glyphicon glyphicon-pencil"></span>
           </button>
@@ -35,7 +36,6 @@
               </div>
             </div>
           </div>
-          <% end %>
 
         </div>
       </div>

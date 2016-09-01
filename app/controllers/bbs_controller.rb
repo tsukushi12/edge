@@ -5,7 +5,7 @@ class BbsController < ApplicationController
   # GET /bbs.json
   def index
     @bbs = Bb.all
-    # @bb = Bb.new
+    @bb = Bb.new
   end
 
   # GET /bbs/1
@@ -34,6 +34,9 @@ class BbsController < ApplicationController
         format.html { redirect_to root_path, notice: '投稿が完了しました' }
         format.json { render :show, status: :created, location: @bb }
       else
+        @bb.errors.each do |name, msg|
+          flash.now[name] = msg
+        end
         format.html { render :new }
         format.json { render json: @bb.errors, status: :unprocessable_entity }
       end
